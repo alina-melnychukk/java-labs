@@ -6,11 +6,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Cart {private final List<Product> products;
-
-    public Cart(List<Product> products) {
-        this.products = new ArrayList<>(products);
-    }
+public class Cart {
+    private final List<Product> products;
     public Cart() {
         this.products = new ArrayList<>();
     }
@@ -18,13 +15,16 @@ public class Cart {private final List<Product> products;
     public void addProduct(Product product) {
         products.add(product);
     }
-    public void addProducts(Collection<Product> products) {
-        this.products.addAll(products);
+    public void removeProduct(Product product) {
+        products.remove(product);
     }
-    public boolean removeProduct(Product product) {
-        return products.remove(product);
-    }
+
     public List<Product> getProducts() {
         return products;
+    }
+    public void placeOrder(Order order){
+        order.setProducts(this.products);
+        order.setStatus("Замовлення розміщено");
+        this.products.clear();
     }
 }

@@ -6,29 +6,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Getter
 public class Order {
-    public enum Status {
-        CREATED, IN_PROGRESS, COMPLETED, CANCELED
-    }
 
-    private final int id;
-    private final List<Product> products;
-    private Status status;
+    @Getter
+    private  int orderId;
+    @Getter
+    private  List<Product> products;
+    private String status;
 
-    public Order(int id, List<Product> products) {
-        this.id = id;
-        this.products = Collections.unmodifiableList(products);
-        this.status = Status.CREATED;
+    public Order(){
+        this.products = new ArrayList<>();
+        this.status = "В обробці";
     }
-    public Order(Order order) {
-        this.id = order.id;
-        this.products = new ArrayList<>(order.products);
-        this.status = order.status;
+    public String getStatus() {
+        return status;
     }
-
-    public void setStatus(Status Status) {
-        this.status = Status;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
 }
