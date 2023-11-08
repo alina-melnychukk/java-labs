@@ -6,7 +6,7 @@
 
 In this lab i`d done a project that checks if a word or phrase is palindrome.
 Steps to do:
-1.	Create 3 classes: Main, PalindromeChecker, PalindromeCheckerTest
+1.	Create 2 classes:  PalindromeChecker, PalindromeCheckerTest
 2.	Receive a word
 3.	Transform phrases to lower case and delete gaps
 4.	Check if the characters at the same positions match
